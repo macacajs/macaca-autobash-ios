@@ -5,7 +5,7 @@
 2. Ensure you have installed cocoapod and configured standard podfile and .podspec (.podspec.json) in your project
 3. Open terminal and enter the directory
 4. Run command:
-   `curl -fsSL https://github.com/macacajs/marmot-ios/files/2114402/Makefile.txt -o Makefile`
+   `curl -fsSL https://github.com/macacajs/marmot-ios/files/2114440/Makefile.txt -o Makefile`
 
 ## 3. Usage
 After installation, simply invoke `make help` to get the full list available commands and params.

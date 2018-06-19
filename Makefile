@@ -9,6 +9,6 @@ AUTOMATION_HOME = $(MARMOT_HOME)/marmot-ios
 
 init:
 	@[ -d "$(MARMOT_HOME)" ] || mkdir -p "$(MARMOT_HOME)"
-	@[ -d "$(AUTOMATION_HOME)" ] || git clone git@github.com:SamuelZhaoY/marmot-ios.git "$(AUTOMATION_HOME)"
+	@[ -d "$(AUTOMATION_HOME)" ] || git clone git@github.com:macacajs/marmot-ios.git "$(AUTOMATION_HOME)"
 
 -include $(AUTOMATION_HOME)/Scripts/Makefile
