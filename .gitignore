@@ -1,0 +1,12 @@
+*.pbxuser
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+/doc/
+/build
+/.build
+/Frameworks
+/Reports
+/Pods
+Podfile.lock
+/Documents

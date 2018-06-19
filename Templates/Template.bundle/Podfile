@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+# source 'add your own private specs repo'
+
+platform :ios, '9.0'
+
+target 'Demo' do
+
+end
+
+workspace 'Demo.xcworkspace'
