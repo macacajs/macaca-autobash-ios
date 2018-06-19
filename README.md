@@ -1,4 +1,5 @@
 ## 1. Tracing Issue:
+Please kindly give us feed back by raising issues.
 
 ## 2. Initialize Project
 1. Create direcotry for the new project
