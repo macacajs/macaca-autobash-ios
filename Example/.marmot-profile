@@ -3,5 +3,6 @@ export COMPANY="Marmot"
 export COMPANY_ID="com.macaca.marmot"
 
 ## POD INFO
+export POD_REPO_HOST="http://0.0.0.0:9920"
 export POD_REPO_NAME="marmot-demo-repo"
 export POD_REPO_URL="git@github.com:SamuelZhaoY/Specs.git"  # change to your own specs repo
