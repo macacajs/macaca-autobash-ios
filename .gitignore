@@ -5,8 +5,9 @@ xcuserdata/
 /doc/
 /build
 /.build
-/Frameworks
-/Reports
-/Pods
+/Example/Frameworks
+/Example/Reports
+/Example/Pods
+/Example//Documents
 Podfile.lock
-/Documents
+
