@@ -1,0 +1,30 @@
+{
+  "name": "example",
+  "version": "1.0.0.0",
+  "summary": "example source code",
+  "homepage": "https://github.com/macacajs/marmot-cli",
+  "description": "Provide example SDK",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "SamuelZhaoY": "samuel.zhao.yue@live.com"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "vendored_frameworks":[
+    "Frameworks/example.framework"
+  ],
+  "source": {
+    "http": "http://foo.path.zip"
+  },
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "resources":[
+    "Resources/**/*"
+  ],
+  "requires_arc": true
+}
