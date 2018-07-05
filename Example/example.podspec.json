@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "summary": "example source code",
   "homepage": "https://github.com/macacajs/marmot-cli",
   "description": "Provide example SDK",
@@ -17,7 +17,7 @@
     "Frameworks/example.framework"
   ],
   "source": {
-    "http": "http://0.0.0.0:9920/cocoapods/example/example-1.0.3.zip"
+    "http": "http://0.0.0.0:9920/cocoapods/example/example-1.0.4.zip"
   },
   "frameworks": [
     "Foundation",
