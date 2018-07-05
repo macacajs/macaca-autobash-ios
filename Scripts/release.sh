@@ -41,8 +41,12 @@ rm -f "${PROJECT_NAME}.zip"
 outputDone
 
 # Get the downloading URL for the zip file
-ESCAPED_UPLOAD_RESULT=$POD_REPO_HOST/$RESOURCE_PATH/${PROJECT_NAME}-$UPDATED_VERSION.zip
+ESCAPED_UPLOAD_RESULT="\"$POD_REPO_HOST/$RESOURCE_PATH/${PROJECT_NAME}-$UPDATED_VERSION.zip\""
+ESCAPED_UPLOAD_RESULT=$(echo "${ESCAPED_UPLOAD_RESULT}" | \
+sed -e 's/\//\\\//g' | \
+sed -e 's/\./\\\./g')
 
+echo $ESCAPED_UPLOAD_RESULT
 # Update full version and downloading URL in the podspec
 outputDoing "Updating Pod Specs"
 updateSpecs "$ESCAPED_UPLOAD_RESULT" "$UPDATED_VERSION"
