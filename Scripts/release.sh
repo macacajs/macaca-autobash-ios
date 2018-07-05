@@ -30,16 +30,18 @@ UPDATED_VERSION="$(currentVersion).$(currentBuildNumber)"
 
 # move the zip file to intranet oss
 outputTitle "Uploading binary version $UPDATED_VERSION..."
-mkdir --parents $MARMOT_HOME/static/$PROJECT_NAME/
-mv ${PROJECT_DIR}/${PROJECT_NAME}.zip $MARMOT_HOME/static/$PROJECT_NAME/${PROJECT_NAME}-$UPDATED_VERSION.zip
+RESOURCE_PATH=cocoapods/$PROJECT_NAME
+GROUP_DIR=$MARMOT_HOME/static/$RESOURCE_PATH
+mkdir -p $GROUP_DIR
+mv ${PROJECT_DIR}/${PROJECT_NAME}.zip $GROUP_DIR/${PROJECT_NAME}-$UPDATED_VERSION.zip
 echo "Move file to static hosts at"
-
+#
 outputDoing "Removing local uploaded zip file"
 rm -f "${PROJECT_NAME}.zip"
 outputDone
 
 # Get the downloading URL for the zip file
-ESCAPED_UPLOAD_RESULT=""
+ESCAPED_UPLOAD_RESULT=$POD_REPO_HOST/$RESOURCE_PATH/${PROJECT_NAME}-$UPDATED_VERSION.zip
 
 # Update full version and downloading URL in the podspec
 outputDoing "Updating Pod Specs"
