@@ -78,6 +78,11 @@ script:
 		$(MAKE) MESSAGE="Missing script file '$(SCRIPT).sh'" CODE=99 stop; \
 	fi
 
+release: update
+	@$(MAKE) SCRIPT="test" ARGS="$(ARGS)" script
+	@$(MAKE) SCRIPT="build" ARGS="$(ARGS) --publish" script
+	@$(MAKE) SCRIPT="$@" script  # `release` will take the default target's plist for version recording. one workspace -> one fixed release configuration
+
 coverage: test
 	@$(MAKE) SCRIPT="$@" ARGS="$(ARGS)" script
 
