@@ -2,6 +2,7 @@
 Please kindly give us feed back by raising issues.
 
 ## 2. Initialize Project
+0. download [marmot](https://github.com/macacajs/marmot) and [deploy](https://github.com/macacajs/marmot/tree/master/docs#production) in docker
 1. Create direcotry for the new project
 2. Ensure you have installed cocoapod and configured standard podfile and .podspec (.podspec.json) in your project
 3. Open terminal and enter the directory
@@ -9,7 +10,13 @@ Please kindly give us feed back by raising issues.
    `curl -fsSL https://github.com/macacajs/marmot-ios/files/2114440/Makefile.txt -o Makefile`
 
 ## 3. Usage
-After installation, simply invoke `make help` to get the full list available commands and params.
+After installation, simply invoke `make help` to get the full list available commands and params. A full example has been provided in the `Example` directory. You can try the commands below:
+
+```
+make build
+make test
+make release
+```
 
 ## 4. Configuration
 Even though the default environment variables used to conduct build, pack and release in the current set of scripts have already been taken cared by the internal implementation. `In some rare or special cases` the default setting might not be well suited into the target project's needs. As a further enhancement, two layers of `.profile` can be placed in order to fulfil user's varies needs.
@@ -32,7 +39,7 @@ export POD_REPO_URL="git@github.xxxxx/Specs.git"
 ```
 
 ### 4.2 Project Scope
-Create a profile into the working project dir, like `xxxx/${PROJECT_ROOT}/.marmot-profile`. In this `.marmot-profile` file, you can specify env vars which are locally reference by the current project.
+Create a profile into the working project dir, like `xxxx/${PROJECT_ROOT}/.marmot-profile`. In this `.marmot-profile` file, you can specify env vars which are locally reference by the current project. refer to [this file](https://github.com/macacajs/marmot-ios/blob/master/Example/.marmot-profile) as a example
 
 ```
 # content of local `.profile`
