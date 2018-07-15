@@ -1,0 +1,14 @@
+*.pbxuser
+*.xcuserstate
+/Pods
+xcuserdata/
+/doc/
+/build
+/.build
+/Frameworks
+/Reports
+/node_modules
+contents.xcworkspacedata
+html/
+package-lock.json
+*.llcov

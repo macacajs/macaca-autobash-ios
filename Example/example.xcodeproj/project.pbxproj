@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5644706620FAF9D50070D04E /* example_tests.h in Headers */ = {isa = PBXBuildFile; fileRef = 5644706420FAF9D50070D04E /* example_tests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5644706720FAF9D50070D04E /* example_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5644706520FAF9D50070D04E /* example_tests.m */; };
+		5644706D20FAFF0E0070D04E /* exampleTests2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5644706C20FAFF0E0070D04E /* exampleTests2.swift */; };
 		566B8A3520E4E6E300593A46 /* example.h in Headers */ = {isa = PBXBuildFile; fileRef = 566B8A3320E4E6E300593A46 /* example.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		566B8A4220E4E74D00593A46 /* exampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B8A4120E4E74D00593A46 /* exampleTests.swift */; };
 		566B8A4420E4E74D00593A46 /* example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 566B8A3020E4E6E300593A46 /* example.framework */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		283ECAFD82E341D3284A2A5D /* Pods-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example.release.xcconfig"; path = "Pods/Target Support Files/Pods-example/Pods-example.release.xcconfig"; sourceTree = "<group>"; };
+		5644706420FAF9D50070D04E /* example_tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = example_tests.h; sourceTree = "<group>"; };
+		5644706520FAF9D50070D04E /* example_tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = example_tests.m; sourceTree = "<group>"; };
+		5644706C20FAFF0E0070D04E /* exampleTests2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exampleTests2.swift; sourceTree = "<group>"; };
 		566B8A3020E4E6E300593A46 /* example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		566B8A3320E4E6E300593A46 /* example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = example.h; sourceTree = "<group>"; };
 		566B8A3420E4E6E300593A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +95,8 @@
 			children = (
 				566B8A3320E4E6E300593A46 /* example.h */,
 				566B8A3420E4E6E300593A46 /* Info.plist */,
+				5644706420FAF9D50070D04E /* example_tests.h */,
+				5644706520FAF9D50070D04E /* example_tests.m */,
 			);
 			path = example;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				566B8A4120E4E74D00593A46 /* exampleTests.swift */,
+				5644706C20FAFF0E0070D04E /* exampleTests2.swift */,
 				566B8A4320E4E74D00593A46 /* Info.plist */,
 			);
 			path = exampleTests;
@@ -118,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				566B8A3520E4E6E300593A46 /* example.h in Headers */,
+				5644706620FAF9D50070D04E /* example_tests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5644706720FAF9D50070D04E /* example_tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				566B8A4220E4E74D00593A46 /* exampleTests.swift in Sources */,
+				5644706D20FAFF0E0070D04E /* exampleTests2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,9 +404,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = example/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marmot.example;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -413,9 +430,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = example/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marmot.example;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -428,8 +450,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = exampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marmot.exampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -441,8 +468,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				INFOPLIST_FILE = exampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marmot.exampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
