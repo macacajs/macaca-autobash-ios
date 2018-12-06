@@ -3,13 +3,13 @@
 
 source "$(dirname $0)/environment.sh"
 
-### Usage
-###		`make upload ARGS="[options]"`, e.g. make build ARGS="--filename=${file-name}.zip --version=1.0.0.0"
-### Description
-###		Upload file from local dir
-### Options
-###		--filename <s>	:the name of the compressed file in the current invocation directory, to be uploaded
-###		--version <s>	:file version, in format of '1.0.0.0', which will be put into the part of the downloading resource url
+#-## Usage
+#-##		`make upload ARGS="[options]"`, e.g. make build ARGS="--filename=${file-name}.zip --version=1.0.0.0"
+#-## Description
+#-##		Upload file from local dir
+#-## Options
+#-##		--filename <s>	:the name of the compressed file in the current invocation directory, to be uploaded
+#-##		--version <s>	:file version, in format of '1.0.0.0', which will be put into the part of the downloading resource url
 
 for arg in "$@"; do
 	case "$arg" in
