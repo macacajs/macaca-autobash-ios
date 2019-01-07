@@ -44,7 +44,6 @@ mkdir -p "$INSTALL_DIR"
 
 # Prepare directories
 WORK_DIR="$SRCROOT/build"
-rm -rf "$WORK_DIR"
 DEVICE_DIR="$WORK_DIR/${FRAMEWORK_CONFIG}-iphoneos/$FRAMEWORK_NAME.framework"
 mkdir -p "$DEVICE_DIR"
 SIMULATOR_DIR="$WORK_DIR/${FRAMEWORK_CONFIG}-iphonesimulator/$FRAMEWORK_NAME.framework"
@@ -81,21 +80,19 @@ fi
 PREPROCESSOR_DEFINITIONS+=( 'SDK_VERSION="'$VERSION'"' 'SDK_COMMIT="'$CURRENT_COMMIT'"' )
 outputDone
 
-echo GCC_PREPROCESSOR_DEFINITIONS='$GCC_PREPROCESSOR_DEFINITIONS '"$(printf '%q ' "${PREPROCESSOR_DEFINITIONS[@]}")"
-
 # Create binary
 outputTitle "Building device..."
 if [ -d "$WORKSPACE_NAME.xcworkspace" ]; then
-	xcodebuild -workspace "$WORKSPACE_NAME.xcworkspace" -scheme $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphoneos CONFIGURATION_BUILD_DIR="$DEVICE_DIR/.." GCC_PREPROCESSOR_DEFINITIONS='$GCC_PREPROCESSOR_DEFINITIONS '"$(printf '%q ' "${PREPROCESSOR_DEFINITIONS[@]}")" clean build | $XCODEBUILD_PIPE
+	xcodebuild -workspace "$WORKSPACE_NAME.xcworkspace" -scheme $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphoneos clean build | $XCODEBUILD_PIPE
 else
-	xcodebuild -project "$FRAMEWORK_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk GCC_PREPROCESSOR_DEFINITIONS='$GCC_PREPROCESSOR_DEFINITIONS '"$(printf '%q ' "${PREPROCESSOR_DEFINITIONS[@]}")" iphoneos clean build | $XCODEBUILD_PIPE
+	xcodebuild -project "$FRAMEWORK_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphoneos clean build | $XCODEBUILD_PIPE
 fi
 
 outputTitle "Build simulator..."
 if [ -d "$WORKSPACE_NAME.xcworkspace" ]; then
-	xcodebuild -workspace "$WORKSPACE_NAME.xcworkspace" -scheme $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphonesimulator CONFIGURATION_BUILD_DIR="$SIMULATOR_DIR/.." GCC_PREPROCESSOR_DEFINITIONS='$GCC_PREPROCESSOR_DEFINITIONS '"$(printf '%q ' "${PREPROCESSOR_DEFINITIONS[@]}")" clean build | $XCODEBUILD_PIPE
+	xcodebuild -workspace "$WORKSPACE_NAME.xcworkspace" -scheme $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphonesimulator clean build | $XCODEBUILD_PIPE
 else
-	xcodebuild -project "$FRAMEWORK_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphonesimulator GCC_PREPROCESSOR_DEFINITIONS='$GCC_PREPROCESSOR_DEFINITIONS '"$(printf '%q ' "${PREPROCESSOR_DEFINITIONS[@]}")" clean build | $XCODEBUILD_PIPE
+	xcodebuild -project "$FRAMEWORK_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphonesimulator clean build | $XCODEBUILD_PIPE
 fi
 
 outputDoing "Copying files"
