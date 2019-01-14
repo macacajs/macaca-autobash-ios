@@ -99,9 +99,16 @@ outputDoing "Copying files"
 cp -r "$DEVICE_DIR" "$INSTALL_DIR/.."
 outputDone
 
+# merge fat file
 outputDoing "Merging iphoneos and simulator binaries"
 lipo -create "$DEVICE_DIR/$FRAMEWORK_NAME" "$SIMULATOR_DIR/$FRAMEWORK_NAME" -output "$INSTALL_DIR/$FRAMEWORK_NAME"
 outputDone
+
+# check if is swift, and merge swift files of device and simulators
+if [[ -d "$SIMULATOR_DIR/Modules/$FRAMEWORK_NAME.swiftmodule" ]]; then
+	cp -r "$SIMULATOR_DIR/Modules/$FRAMEWORK_NAME.swiftmodule/." "$INSTALL_DIR/Modules/$FRAMEWORK_NAME.swiftmodule"
+fi
+
 
 outputDoing "Cleaning up"
 rm -rf "$WORK_DIR"
