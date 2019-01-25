@@ -85,14 +85,14 @@ outputTitle "Building device..."
 if [ -d "$WORKSPACE_NAME.xcworkspace" ]; then
 	xcodebuild -workspace "$WORKSPACE_NAME.xcworkspace" -scheme $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphoneos CONFIGURATION_BUILD_DIR="$DEVICE_DIR/.." clean build | $XCODEBUILD_PIPE
 else
-	xcodebuild -project "$FRAMEWORK_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphoneos CONFIGURATION_BUILD_DIR="$DEVICE_DIR/.." clean build | $XCODEBUILD_PIPE
+	xcodebuild -project "$WORKSPACE_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphoneos CONFIGURATION_BUILD_DIR="$DEVICE_DIR/.." clean build | $XCODEBUILD_PIPE
 fi
 
 outputTitle "Build simulator..."
 if [ -d "$WORKSPACE_NAME.xcworkspace" ]; then
 	xcodebuild -workspace "$WORKSPACE_NAME.xcworkspace" -scheme $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphonesimulator CONFIGURATION_BUILD_DIR="$SIMULATOR_DIR/.." clean build | $XCODEBUILD_PIPE
 else
-	xcodebuild -project "$FRAMEWORK_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphonesimulator CONFIGURATION_BUILD_DIR="$SIMULATOR_DIR/.." clean build | $XCODEBUILD_PIPE
+	xcodebuild -project "$WORKSPACE_NAME.xcodeproj" -target $FRAMEWORK_NAME -configuration $FRAMEWORK_CONFIG -sdk iphonesimulator CONFIGURATION_BUILD_DIR="$SIMULATOR_DIR/.." clean build | $XCODEBUILD_PIPE
 fi
 
 outputDoing "Copying files"
